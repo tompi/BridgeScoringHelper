@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 
 public class Result : IComparable {
 	public Contract Contract { get; }
     public Board Board { get; }
     public Table Table { get; }
-    public int NorthSouthPoints { get; }
+    public int NorthSouthPoints { get; set; }
     public double NorthSouthScore { get; set; }
 
     public Result(Contract contract, Board board, Table table) {

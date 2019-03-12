@@ -1,16 +1,17 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 
 public class RBNParser
 {
 
-    public RBNArticle Parse(StringReader rbn)
+    public RBNArticle Parse(StreamReader rbnStream)
     {
         RBNArticle article = new RBNArticle();
-        string line = null;
 
         RBNHands currentHands = null;
         RBNAuction currentAuction = null;
-        while ((line = rbn.ReadLine()) != null)
+        string line;
+        while ((line = rbnStream.ReadLine()) != null)
         {
             RBNLine rbnLine = RBNLineMapper.GetRBNLine(line);
             if (rbnLine != null)

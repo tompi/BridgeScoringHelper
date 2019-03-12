@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeScoringHelper", "Brid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scoring", "Scoring\Scoring.csproj", "{7762FABC-AFCB-4F2A-B21C-2C0390074CBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scoring.Tests", "Scoring.Tests\Scoring.Tests.csproj", "{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,5 +87,21 @@ Global
 		{7762FABC-AFCB-4F2A-B21C-2C0390074CBF}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
 		{7762FABC-AFCB-4F2A-B21C-2C0390074CBF}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
 		{7762FABC-AFCB-4F2A-B21C-2C0390074CBF}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Release|iPhone.Build.0 = Release|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{8C2823B2-7A85-4E84-BDD6-F64FF1A75CAC}.AppStore|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

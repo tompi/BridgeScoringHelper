@@ -35,8 +35,9 @@ public static class HTMLBidMapper
         }
     }
 
-    private static void AppendQuality(StringBuilder html, BidQuality quality)
+    private static void AppendQuality(StringBuilder html, BidQuality? quality)
     {
+        if (quality == null) return;
         switch (quality)
         {
             case BidQuality.Good:

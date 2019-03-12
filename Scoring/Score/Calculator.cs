@@ -1,4 +1,4 @@
-public static class Calculator {
+﻿public static class Calculator {
 
 	public static int GetNorthSouthPoints(Contract Contract, Board board) {
 		bool vulnerable = board.Vulnerability.IsVulnerable(Contract.Player);

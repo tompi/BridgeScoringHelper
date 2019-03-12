@@ -1,4 +1,4 @@
-public enum Suit
+﻿public enum Suit
 {
     Clubs, Diamonds, Hearts, Spades, Notrump
 }

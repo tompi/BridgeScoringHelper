@@ -5,7 +5,7 @@ using System.Text;
 /*
  * Format used by "BigDeal" program
  */
-public class Parser {
+public class CSVParser {
     private static char separator = ',';
 
     public static StringBuilder WriteCSV(List<PBNGame> games) {

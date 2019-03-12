@@ -1,4 +1,4 @@
-// http://www.pagat.com/boston/bridge.html#chicago - rus
+﻿// http://www.pagat.com/boston/bridge.html#chicago - rus
 public static class RussianIMPCalculator {
 
 	public static int GetIMP(int result, int HCP, bool vulnerable,
@@ -6,7 +6,7 @@ public static class RussianIMPCalculator {
 		int expectedResult = GetExpectedResult(HCP, result > 0 ? vulnerable
 				: opponentsVulnerable);
 		return IMPCalculator.GetNorthSouthIMP(result, expectedResult);
-		// return result >= expectedResult ? IMPs * -1 : IMPs;
+		// return result >= expectedResult ? IMPs * -1 in IMPs;
 	}
 
 	public static int GetExpectedHCP(int result, bool vulnerable) {

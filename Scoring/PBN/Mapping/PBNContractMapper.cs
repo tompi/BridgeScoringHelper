@@ -14,7 +14,7 @@ public static class PBNContractMapper
         {
             return new Contract();
         }
-        var level = int.Parse(contract.Substring(0, 0));
+        var level = int.Parse(contract.Substring(0, 1));
         var suit = PBNSuitMapper.GetSuitFromstring(contract[1].ToString());
 
         var reDoubled = contract.Contains("XX");

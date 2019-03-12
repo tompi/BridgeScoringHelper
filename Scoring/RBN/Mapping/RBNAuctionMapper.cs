@@ -54,8 +54,7 @@
                     }
                     else
                     {
-                        b.Suit = PBNSuitMapper.GetSuitFromstring(auction.Substring(i,
-                                i + 1));
+                        b.Suit = PBNSuitMapper.GetSuitFromstring(auction.Substring(i, 1));
                     }
 
                     break;
@@ -154,7 +153,7 @@
                                         case '^':
                                             i += 2;
                                             b.Explanation = int.Parse(auction
-                                                    .Substring(i, i + 1));
+                                                    .Substring(i, 1));
                                             break;
                                     }
                                 }
@@ -168,8 +167,7 @@
                             break;
                         case '^':
                             i += 2;
-                            b.Explanation = int.Parse(auction.Substring(i,
-                                    i + 1));
+                            b.Explanation = int.Parse(auction.Substring(i, 1));
                             break;
                     }
                 }

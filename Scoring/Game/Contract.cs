@@ -1,11 +1,11 @@
 public class Contract {
-	public int Level { get; }
-    public Suit Suit { get; }
-    public bool Doubled { get; }
-    public bool ReDoubled { get; }
-    public Direction Player { get; }
-    public int Tricks { get; }
-    public Card Lead { get; }
+	public int Level { get; set; }
+    public Suit Suit { get; set; }
+    public bool Doubled { get; set; }
+    public bool ReDoubled { get; set; }
+    public Direction Player { get; set; }
+    public int Tricks { get; set; }
+    public Card Lead { get; set; }
 
     public Contract() {
 	}

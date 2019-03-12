@@ -7,6 +7,6 @@ public class Bid
     public bool ReDouble { get; set; }
     public int Explanation { get; set; }
     public bool Conventional { get; set; }
-    public BidQuality Quality { get; set; }
+    public BidQuality? Quality { get; set; }
     public bool YourTurn { get; set; }
 }

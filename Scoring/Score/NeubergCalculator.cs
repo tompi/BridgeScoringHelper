@@ -1,6 +1,6 @@
 using System;
 
-class NeubergCalculator
+public class NeubergCalculator
 {
 	private double _neubergFactor;
 	public NeubergCalculator(int numberOfTimesBoardWasPlayed, int numberOfTimesBoardShouldHaveBeenPlayed) {

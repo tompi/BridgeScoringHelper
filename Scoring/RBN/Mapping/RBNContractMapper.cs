@@ -15,7 +15,7 @@ public static class RBNContractMapper
         }
         var level = int.Parse(contract.Substring(0, 1));
 
-        var suit = PBNSuitMapper.GetSuitFromstring(contract.Substring(1, 2));
+        var suit = PBNSuitMapper.GetSuitFromstring(contract.Substring(1, 1));
 
         var reDoubled = contract.Contains("R");
         var doubled = reDoubled || contract.Contains("X");

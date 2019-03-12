@@ -18,8 +18,9 @@
         return GetCall(bid) + GetNote(bid.Explanation) + GetNAG(bid.Quality);
     }
 
-    private static string GetNAG(BidQuality quality)
+    private static string GetNAG(BidQuality? quality)
     {
+        if (quality == null) return "";
         switch (quality)
         {
             case BidQuality.Good:

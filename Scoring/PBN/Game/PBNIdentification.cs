@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 public class PBNIdentification
 {
@@ -103,7 +103,7 @@ public class PBNIdentification
     }
 
     /*
-	 * private static final SimpleDateFormat _simpleDateFormat = new
+	 * private static SimpleDateFormat _simpleDateFormat = new
 	 * SimpleDateFormat( "yyyy.MM.dd");
 	 * 
 	 * private DateTime GetDateFromstring(string value) throws ParseException {
