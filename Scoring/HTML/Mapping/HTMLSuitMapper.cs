@@ -1,19 +1,24 @@
-﻿public static class HTMLSuitMapper
+﻿using Scoring.Game;
+
+namespace Scoring.HTML.Mapping
 {
-    public static string GetstringFromSuit(Suit suit)
+    public static class HTMLSuitMapper
     {
-        switch (suit)
+        public static string GetstringFromSuit(Suit suit)
         {
-            case Suit.Spades:
-                return "&spades;";
-            case Suit.Hearts:
-                return "<span class=\"red\">&hearts;</span>";
-            case Suit.Diamonds:
-                return "<span class=\"red\">&diams;</span>";
-            case Suit.Clubs:
-                return "&clubs;";
-            default:
-                return "NT";
+            switch (suit)
+            {
+                case Suit.Spades:
+                    return "&spades;";
+                case Suit.Hearts:
+                    return "<span class=\"red\">&hearts;</span>";
+                case Suit.Diamonds:
+                    return "<span class=\"red\">&diams;</span>";
+                case Suit.Clubs:
+                    return "&clubs;";
+                default:
+                    return "NT";
+            }
         }
     }
 }

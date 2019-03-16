@@ -1,22 +1,25 @@
-public enum RBNLineType
+namespace Scoring.RBN
 {
-    TitleAndAuthor,
-    DateAndTime,
-    Location,
-    EventOrMainHeading,
-    SessionStageOrSubheading,
-    FormOfScoring,
-    TeamNamesAndCarryovers,
-    NamesOfPlayersAndRoomOrTable,
-    BoardNumber,
-    Hands,
-    Auction,
-    ContractAndDeclarer,
-    PlaySequence,
-    ResultTricksWonAndScore,
-    InstantAwards,
-    MakesAtDoubleDummy,
-    Text,
-    Pause,
-    BidExplanation
+    public enum RBNLineType
+    {
+        TitleAndAuthor,
+        DateAndTime,
+        Location,
+        EventOrMainHeading,
+        SessionStageOrSubheading,
+        FormOfScoring,
+        TeamNamesAndCarryovers,
+        NamesOfPlayersAndRoomOrTable,
+        BoardNumber,
+        Hands,
+        Auction,
+        ContractAndDeclarer,
+        PlaySequence,
+        ResultTricksWonAndScore,
+        InstantAwards,
+        MakesAtDoubleDummy,
+        Text,
+        Pause,
+        BidExplanation
+    }
 }

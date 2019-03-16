@@ -1,4 +1,8 @@
+namespace Scoring.Game
+{
 
-public enum BidQuality {
-	VeryGood, Good, Poor, VeryPoor, Speculative, Questionable
+    public enum BidQuality
+    {
+        VeryGood, Good, Poor, VeryPoor, Speculative, Questionable
+    }
 }

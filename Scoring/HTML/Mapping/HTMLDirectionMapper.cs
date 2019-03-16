@@ -1,19 +1,24 @@
-﻿public static class HTMLDirectionMapper
+﻿using Scoring.Game;
+
+namespace Scoring.HTML.Mapping
 {
-    public static string GetstringFromDirection(Direction direction)
+    public static class HTMLDirectionMapper
     {
-        switch (direction)
+        public static string GetstringFromDirection(Direction direction)
         {
-            case Direction.North:
-                return "North";
-            case Direction.South:
-                return "South";
-            case Direction.West:
-                return "West";
-            case Direction.East:
-                return "East";
-            default:
-                return "Unknown";
+            switch (direction)
+            {
+                case Direction.North:
+                    return "North";
+                case Direction.South:
+                    return "South";
+                case Direction.West:
+                    return "West";
+                case Direction.East:
+                    return "East";
+                default:
+                    return "Unknown";
+            }
         }
     }
 }

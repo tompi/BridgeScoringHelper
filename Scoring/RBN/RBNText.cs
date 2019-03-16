@@ -1,23 +1,26 @@
-﻿public class RBNText : RBNLine
+﻿namespace Scoring.RBN
 {
-    public string Text;
-
-    override public string GetRBNstring()
+    public class RBNText : RBNLine
     {
-        return "{" + Text + "}";
-    }
+        public string Text;
 
-    override public void ParseRBNstring(string rbn)
-    {
-        if (rbn != null && rbn.Length > 2)
+        override public string GetRBNstring()
         {
-            Text = rbn.Substring(1, rbn.Length - 1);
+            return "{" + Text + "}";
         }
-    }
 
-    override public RBNLineType GetRBNLineType()
-    {
-        return RBNLineType.Text;
-    }
+        override public void ParseRBNstring(string rbn)
+        {
+            if (rbn != null && rbn.Length > 2)
+            {
+                Text = rbn.Substring(1, rbn.Length - 1);
+            }
+        }
 
+        override public RBNLineType GetRBNLineType()
+        {
+            return RBNLineType.Text;
+        }
+
+    }
 }

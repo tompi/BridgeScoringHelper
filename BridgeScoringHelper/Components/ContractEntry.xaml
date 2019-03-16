@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:suit="clr-namespace:BridgeScoringHelper.Components.Suit"
+    x:Class="BridgeScoringHelper.Components.ContractEntry">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal">
+            <suit:Spade/>
+            <Label Text="&#x2660;" TextColor="#071087" FontSize="28"/>
+            <Label Text="&#x2665;" TextColor="#d72b21" FontSize="28"/>
+            <Label Text="&#x2666;" TextColor="#ef6c1a" FontSize="28"/>
+            <Label Text="&#x2663;" TextColor="#28552a" FontSize="28"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

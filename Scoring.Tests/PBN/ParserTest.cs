@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Scoring.Tests.Score.PBN
+namespace Scoring.Tests.PBN
 {
     public class ParserTest
     {

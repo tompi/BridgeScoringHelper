@@ -1,4 +1,7 @@
-public class PBNPlay
+namespace Scoring.PBN.Game
 {
+    public class PBNPlay
+    {
 
+    }
 }

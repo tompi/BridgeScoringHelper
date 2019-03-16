@@ -1,25 +1,31 @@
 ﻿using System;
+using Scoring.Game;
+using Scoring.PBN.Mapping;
 using Xunit;
 
-namespace Scoring.Tests.Score.PBN.Mapping
+namespace Scoring.Tests.PBN.Mapping
 {
     public class BidMapperTest {
 
         [Fact]
         public void test3NTmapsTo3NT() {
-            Bid b = new Bid();
-            b.Level = 3;
-            b.Suit = Suit.Notrump;
+            Bid b = new Bid
+            {
+                Level = 3,
+                Suit = Suit.Notrump
+            };
 
             Assert.Equal("3NT", PBNBidMapper.GetstringFromBid(b));
         }
 
         [Fact]
         public void test3NTVeryPoormapsTo3NT() {
-            Bid b = new Bid();
-            b.Level = 3;
-            b.Suit = Suit.Notrump;
-            b.Quality = BidQuality.VeryPoor;
+            Bid b = new Bid
+            {
+                Level = 3,
+                Suit = Suit.Notrump,
+                Quality = BidQuality.VeryPoor
+            };
 
             Assert.Equal("3NT $4", PBNBidMapper.GetstringFromBid(b));
         }

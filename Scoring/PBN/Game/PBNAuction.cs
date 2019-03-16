@@ -1,10 +1,15 @@
-public class PBNAuction
-{
-    public Auction Auction;
+using Scoring.Game;
 
-    public static class Tags
+namespace Scoring.PBN.Game
+{
+    public class PBNAuction
     {
-        public static readonly string Auction = "Auction";
-        public static readonly string Note = "Note";
+        public Auction Auction;
+
+        public static class Tags
+        {
+            public static readonly string Auction = "Auction";
+            public static readonly string Note = "Note";
+        }
     }
 }

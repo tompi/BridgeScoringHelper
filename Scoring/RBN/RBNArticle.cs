@@ -1,33 +1,36 @@
 ﻿using System.Collections.Generic;
 
-public class RBNArticle
+namespace Scoring.RBN
 {
-    public RBNArticle()
+    public class RBNArticle
     {
-        Lines = new List<RBNLine>();
-    }
-
-    public List<RBNLine> Lines;
-
-    public string Author;
-    public string Title;
-
-    public void Add(RBNLine line)
-    {
-        if (line == null)
-            return;
-
-        RBNLineType type = line.GetRBNLineType();
-        switch (type)
+        public RBNArticle()
         {
-            case RBNLineType.TitleAndAuthor:
-                RBNTitleAndAuthor ta = (RBNTitleAndAuthor)line;
-                Author = ta.Author;
-                Title = ta.Title;
+            Lines = new List<RBNLine>();
+        }
+
+        public List<RBNLine> Lines;
+
+        public string Author;
+        public string Title;
+
+        public void Add(RBNLine line)
+        {
+            if (line == null)
                 return;
-            default:
-                Lines.Add(line);
-                break;
+
+            RBNLineType type = line.GetRBNLineType();
+            switch (type)
+            {
+                case RBNLineType.TitleAndAuthor:
+                    RBNTitleAndAuthor ta = (RBNTitleAndAuthor)line;
+                    Author = ta.Author;
+                    Title = ta.Title;
+                    return;
+                default:
+                    Lines.Add(line);
+                    break;
+            }
         }
     }
 }

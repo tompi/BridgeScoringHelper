@@ -1,27 +1,33 @@
-﻿public class RBNHands : RBNLine
+﻿using Scoring.Game;
+using Scoring.PBN.Mapping;
+
+namespace Scoring.RBN
 {
-    public Deal Deal;
-    public Vulnerability Vulnerability;
-    public Direction Dealer;
-
-    override public string GetRBNstring()
+    public class RBNHands : RBNLine
     {
-        return PBNDealMapper.GetstringFromDeal(Deal).Replace(' ', ':');
-    }
+        public Deal Deal;
+        public Vulnerability Vulnerability;
+        public Direction Dealer;
 
-    override public void ParseRBNstring(string rbn)
-    {
-        if (!string.IsNullOrEmpty(rbn))
+        override public string GetRBNstring()
         {
-            string pbn = rbn.Replace(':', ' ');
-            pbn = pbn.Substring(0, 1) + ":" + pbn.Substring(2);
-            Deal = PBNDealMapper.GetDealFromstring(pbn);
+            return PBNDealMapper.GetstringFromDeal(Deal).Replace(' ', ':');
         }
-    }
 
-    override public RBNLineType GetRBNLineType()
-    {
-        return RBNLineType.Hands;
-    }
+        override public void ParseRBNstring(string rbn)
+        {
+            if (!string.IsNullOrEmpty(rbn))
+            {
+                string pbn = rbn.Replace(':', ' ');
+                pbn = pbn.Substring(0, 1) + ":" + pbn.Substring(2);
+                Deal = PBNDealMapper.GetDealFromstring(pbn);
+            }
+        }
 
+        override public RBNLineType GetRBNLineType()
+        {
+            return RBNLineType.Hands;
+        }
+
+    }
 }

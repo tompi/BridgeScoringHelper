@@ -1,23 +1,29 @@
-﻿public class RBNContractAndDeclarer : RBNLine
+﻿using Scoring.Game;
+using Scoring.RBN.Mapping;
+
+namespace Scoring.RBN
 {
-    public Contract Contract;
-
-    override public string GetRBNstring()
+    public class RBNContractAndDeclarer : RBNLine
     {
-        return RBNContractMapper.GetstringFromContract(Contract);
-    }
+        public Contract Contract;
 
-    override public void ParseRBNstring(string rbn)
-    {
-        if (!string.IsNullOrEmpty(rbn))
+        override public string GetRBNstring()
         {
-            Contract = RBNContractMapper.GetContractFromstring(rbn);
+            return RBNContractMapper.GetstringFromContract(Contract);
         }
-    }
 
-    override public RBNLineType GetRBNLineType()
-    {
-        return RBNLineType.ContractAndDeclarer;
-    }
+        override public void ParseRBNstring(string rbn)
+        {
+            if (!string.IsNullOrEmpty(rbn))
+            {
+                Contract = RBNContractMapper.GetContractFromstring(rbn);
+            }
+        }
 
+        override public RBNLineType GetRBNLineType()
+        {
+            return RBNLineType.ContractAndDeclarer;
+        }
+
+    }
 }

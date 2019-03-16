@@ -1,53 +1,58 @@
 ﻿using System.Text;
+using Scoring.Game;
+using Scoring.PBN.Game;
 
-public static class PBNAuctionMapper
+namespace Scoring.PBN.Mapping
 {
-
-    /*
-	public static Auction GetAuctionFromStream(InputStream identification) {
-		// TODO
-		return null;
-	}
-	*/
-
-    public static void AppendAuction(StringBuilder pbn, PBNAuction pbnAuction)
+    public static class PBNAuctionMapper
     {
-        if (pbnAuction == null || pbnAuction.Auction == null
-                || pbnAuction.Auction.Bids == null
-                || pbnAuction.Auction.Bids.Count < 1)
-        {
-            return;
-        }
-        var auction = pbnAuction.Auction;
-        PBNTagMapper.AppendTag(pbn, PBNAuction.Tags.Auction, auction.Dealer);
 
-        int ix = 1;
-        foreach (Bid b in auction.Bids)
+        /*
+        public static Auction GetAuctionFromStream(InputStream identification) {
+            // TODO
+            return null;
+        }
+        */
+
+        public static void AppendAuction(StringBuilder pbn, PBNAuction pbnAuction)
         {
-            pbn.Append(PBNBidMapper.GetstringFromBid(b));
-            if (ix == auction.Bids.Count)
+            if (pbnAuction == null || pbnAuction.Auction == null
+                    || pbnAuction.Auction.Bids == null
+                    || pbnAuction.Auction.Bids.Count < 1)
             {
-                pbn.Append('\n');
+                return;
             }
-            else
+            var auction = pbnAuction.Auction;
+            PBNTagMapper.AppendTag(pbn, PBNAuction.Tags.Auction, auction.Dealer);
+
+            int ix = 1;
+            foreach (Bid b in auction.Bids)
             {
-                if (ix % 4 == 0)
+                pbn.Append(PBNBidMapper.GetstringFromBid(b));
+                if (ix == auction.Bids.Count)
                 {
                     pbn.Append('\n');
                 }
                 else
                 {
-                    pbn.Append(' ');
+                    if (ix % 4 == 0)
+                    {
+                        pbn.Append('\n');
+                    }
+                    else
+                    {
+                        pbn.Append(' ');
+                    }
                 }
+                ix++;
             }
-            ix++;
-        }
-        ix = 1;
-        foreach (string explanation in auction.Explanations)
-        {
-            PBNTagMapper.AppendTag(pbn, PBNAuction.Tags.Note, ix.ToString()
-                    + ":" + explanation);
-            ix++;
+            ix = 1;
+            foreach (string explanation in auction.Explanations)
+            {
+                PBNTagMapper.AppendTag(pbn, PBNAuction.Tags.Note, ix.ToString()
+                        + ":" + explanation);
+                ix++;
+            }
         }
     }
 }

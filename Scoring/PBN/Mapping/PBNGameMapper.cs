@@ -1,34 +1,39 @@
 ﻿using System.Text;
+using Scoring.Game;
+using Scoring.PBN.Game;
 
-public static class PBNGameMapper
+namespace Scoring.PBN.Mapping
 {
-
-    /*
-	public static Game GetGameFromStream(InputStream identification) {
-		// TODO
-		return null;
-	}
-	*/
-
-    public static void AppendGame(StringBuilder pbn, PBNGame game)
+    public static class PBNGameMapper
     {
-        if (game == null)
-        {
-            return;
+
+        /*
+        public static Game GetGameFromStream(InputStream identification) {
+            // TODO
+            return null;
         }
-        // Each game should start with empty line:
-        pbn.Append('\n');
-        PBNIdentificationMapper.AppendIdentification(pbn, game.Identification);
-        if (game.Auction == null)
+        */
+
+        public static void AppendGame(StringBuilder pbn, PBNGame game)
         {
-            game.Auction = new PBNAuction
+            if (game == null)
             {
-                Auction = new Auction(
-                    game.Identification.Dealer)
-            };
+                return;
+            }
+            // Each game should start with empty line:
+            pbn.Append('\n');
+            PBNIdentificationMapper.AppendIdentification(pbn, game.Identification);
+            if (game.Auction == null)
+            {
+                game.Auction = new PBNAuction
+                {
+                    Auction = new Auction(
+                        game.Identification.Dealer)
+                };
+            }
+            PBNAuctionMapper.AppendAuction(pbn, game.Auction);
+            // TODO: PlayMapper
+            PBNSupplementalMapper.AppendSupplemental(pbn, game.Supplemental);
         }
-        PBNAuctionMapper.AppendAuction(pbn, game.Auction);
-        // TODO: PlayMapper
-        PBNSupplementalMapper.AppendSupplemental(pbn, game.Supplemental);
     }
 }

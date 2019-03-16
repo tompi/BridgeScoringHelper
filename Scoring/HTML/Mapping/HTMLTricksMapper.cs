@@ -1,19 +1,24 @@
-﻿public static class HTMLTricksMapper
+﻿using Scoring.Game;
+
+namespace Scoring.HTML.Mapping
 {
-    public static string GetstringFromContract(Contract contract)
+    public static class HTMLTricksMapper
     {
-        int diff = contract.Tricks - (contract.Level + 6);
-        if (diff == 0)
+        public static string GetstringFromContract(Contract contract)
         {
-            return "=";
-        }
-        else if (diff > 0)
-        {
-            return "+" + diff;
-        }
-        else
-        {
-            return diff.ToString();
+            int diff = contract.Tricks - (contract.Level + 6);
+            if (diff == 0)
+            {
+                return "=";
+            }
+            else if (diff > 0)
+            {
+                return "+" + diff;
+            }
+            else
+            {
+                return diff.ToString();
+            }
         }
     }
 }

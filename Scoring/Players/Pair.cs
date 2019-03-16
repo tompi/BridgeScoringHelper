@@ -1,22 +1,26 @@
 ﻿using System;
 
-public class Pair : IComparable
+namespace Scoring.Players
 {
-    public Person NorthEast { get; set; }
-    public Person SouthWest { get; set; }
-    public double Score { get; set; }
-    public int Number { get; set; }
-
-    public int CompareTo(object obj)
+    public class Pair : IComparable
     {
-        if (!(obj is Pair other))
-        {
-            return 1;
-        }
-        return Score.CompareTo(other.Score);
-    }
+        public Person NorthEast { get; set; }
+        public Person SouthWest { get; set; }
+        public double Score { get; set; }
+        public int Number { get; set; }
 
-    public string GetDisplayName() {
-		return NorthEast.DisplayName + "/" + SouthWest.DisplayName;
-	}
+        public int CompareTo(object obj)
+        {
+            if (!(obj is Pair other))
+            {
+                return 1;
+            }
+            return Score.CompareTo(other.Score);
+        }
+
+        public string GetDisplayName()
+        {
+            return NorthEast.DisplayName + "/" + SouthWest.DisplayName;
+        }
+    }
 }

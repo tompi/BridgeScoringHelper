@@ -2,9 +2,11 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Scoring.Game;
+using Scoring.RBN;
 using Xunit;
 
-namespace Scoring.Tests.Score
+namespace Scoring.Tests.RBN
 {
     public class ParserTest
     {

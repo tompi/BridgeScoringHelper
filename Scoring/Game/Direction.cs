@@ -1,15 +1,18 @@
-public enum Direction
+namespace Scoring.Game
 {
-    North,
-    South,
-    East,
-    West
-}
-
-public static class DirectionExtensions
+    public enum Direction
     {
-	public static bool IsNorthSouth(this Direction direction)
-	{
-		return (direction == Direction.North || direction == Direction.South);
-	}
+        North,
+        South,
+        East,
+        West
+    }
+
+    public static class DirectionExtensions
+    {
+        public static bool IsNorthSouth(this Direction direction)
+        {
+            return (direction == Direction.North || direction == Direction.South);
+        }
+    }
 }

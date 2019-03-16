@@ -1,7 +1,10 @@
-public class PBNGame
+namespace Scoring.PBN.Game
 {
-    public PBNIdentification Identification;
-    public PBNAuction Auction;
-    public PBNPlay Play;
-    public PBNSupplemental Supplemental;
+    public class PBNGame
+    {
+        public PBNIdentification Identification;
+        public PBNAuction Auction;
+        public PBNPlay Play;
+        public PBNSupplemental Supplemental;
+    }
 }

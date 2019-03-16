@@ -1,7 +1,11 @@
-﻿public abstract class RBNLine {
-	public abstract RBNLineType GetRBNLineType();
+﻿namespace Scoring.RBN
+{
+    public abstract class RBNLine
+    {
+        public abstract RBNLineType GetRBNLineType();
 
-	public abstract string GetRBNstring();
+        public abstract string GetRBNstring();
 
-	public abstract void ParseRBNstring(string rbn);
+        public abstract void ParseRBNstring(string rbn);
+    }
 }

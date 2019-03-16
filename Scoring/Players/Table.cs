@@ -1,6 +1,9 @@
-public class Table
+namespace Scoring.Players
 {
-	public int Number { get; set; }
-    public Pair NorthSouthPair { get; set; }
-    public Pair EastWestPair { get; set; }
+    public class Table
+    {
+        public int Number { get; set; }
+        public Pair NorthSouthPair { get; set; }
+        public Pair EastWestPair { get; set; }
+    }
 }

@@ -1,25 +1,31 @@
-﻿public class RBNAuction : RBNLine
+﻿using Scoring.Game;
+using Scoring.RBN.Mapping;
+
+namespace Scoring.RBN
 {
-    public Auction Auction;
-    public Vulnerability Vulnerability;
-
-    public override string GetRBNstring()
+    public class RBNAuction : RBNLine
     {
-        return null;
-    }
+        public Auction Auction;
+        public Vulnerability Vulnerability;
 
-    public override void ParseRBNstring(string rbn)
-    {
-        if (!string.IsNullOrEmpty(rbn))
+        public override string GetRBNstring()
         {
-            Auction = RBNAuctionMapper.GetAuctionFromstring(rbn);
-            Vulnerability = RBNAuctionMapper.GetVulnerabilityFromstring(rbn);
+            return null;
         }
-    }
 
-    public override RBNLineType GetRBNLineType()
-    {
-        return RBNLineType.Auction;
-    }
+        public override void ParseRBNstring(string rbn)
+        {
+            if (!string.IsNullOrEmpty(rbn))
+            {
+                Auction = RBNAuctionMapper.GetAuctionFromstring(rbn);
+                Vulnerability = RBNAuctionMapper.GetVulnerabilityFromstring(rbn);
+            }
+        }
 
+        public override RBNLineType GetRBNLineType()
+        {
+            return RBNLineType.Auction;
+        }
+
+    }
 }

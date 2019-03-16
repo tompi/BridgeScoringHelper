@@ -1,19 +1,22 @@
-﻿// NB: Custom extension to RBN
-public class RBNPause : RBNLine
+﻿namespace Scoring.RBN
 {
-
-    override public string GetRBNstring()
+    // NB: Custom extension to RBN
+    public class RBNPause : RBNLine
     {
-        return "";
-    }
 
-    override public void ParseRBNstring(string rbn)
-    {
-    }
+        override public string GetRBNstring()
+        {
+            return "";
+        }
 
-    override public RBNLineType GetRBNLineType()
-    {
-        return RBNLineType.Pause;
-    }
+        override public void ParseRBNstring(string rbn)
+        {
+        }
 
+        override public RBNLineType GetRBNLineType()
+        {
+            return RBNLineType.Pause;
+        }
+
+    }
 }

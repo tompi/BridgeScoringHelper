@@ -1,25 +1,30 @@
 ﻿using System.Collections.Generic;
 using System.Text;
+using Scoring.PBN.Game;
+using Scoring.PBN.Mapping;
 
-public static class PBNParser
+namespace Scoring.PBN
 {
-    /*
-	public static List<PBNGame> ReadPBN(InputStream pbnFile) {
-		// TODO:
-		// Open file
-		// Read lines
-		// Split lines into PBN-Games
-		return null;
-	}
-	*/
-
-    public static StringBuilder WritePBN(List<PBNGame> games)
+    public static class PBNParser
     {
-        StringBuilder pbn = new StringBuilder();
-        foreach (PBNGame g in games)
-        {
-            PBNGameMapper.AppendGame(pbn, g);
+        /*
+        public static List<PBNGame> ReadPBN(InputStream pbnFile) {
+            // TODO:
+            // Open file
+            // Read lines
+            // Split lines into PBN-Games
+            return null;
         }
-        return pbn;
+        */
+
+        public static StringBuilder WritePBN(List<PBNGame> games)
+        {
+            StringBuilder pbn = new StringBuilder();
+            foreach (PBNGame g in games)
+            {
+                PBNGameMapper.AppendGame(pbn, g);
+            }
+            return pbn;
+        }
     }
 }

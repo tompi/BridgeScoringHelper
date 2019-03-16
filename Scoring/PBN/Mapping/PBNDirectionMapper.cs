@@ -1,38 +1,43 @@
-﻿public static class PBNDirectionMapper
+﻿using Scoring.Game;
+
+namespace Scoring.PBN.Mapping
 {
-
-    public static Direction GetDirectionFromstring(char direction)
+    public static class PBNDirectionMapper
     {
-        if (direction == 'W')
-        {
-            return Direction.West;
-        }
-        else if (direction == 'E')
-        {
-            return Direction.East;
-        }
-        else if (direction == 'S')
-        {
-            return Direction.South;
-        }
-        else
-        {
-            return Direction.North;
-        }
-    }
 
-    public static string GetstringFromDirection(Direction direction)
-    {
-        switch (direction)
+        public static Direction GetDirectionFromstring(char direction)
         {
-            case Direction.West:
-                return "W";
-            case Direction.East:
-                return "E";
-            case Direction.South:
-                return "S";
-            default:
-                return "N";
+            if (direction == 'W')
+            {
+                return Direction.West;
+            }
+            else if (direction == 'E')
+            {
+                return Direction.East;
+            }
+            else if (direction == 'S')
+            {
+                return Direction.South;
+            }
+            else
+            {
+                return Direction.North;
+            }
+        }
+
+        public static string GetstringFromDirection(Direction direction)
+        {
+            switch (direction)
+            {
+                case Direction.West:
+                    return "W";
+                case Direction.East:
+                    return "E";
+                case Direction.South:
+                    return "S";
+                default:
+                    return "N";
+            }
         }
     }
 }

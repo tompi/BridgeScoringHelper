@@ -1,33 +1,36 @@
-﻿public class RBNTitleAndAuthor : RBNLine
+﻿namespace Scoring.RBN
 {
-    public string Author;
-    public string Title;
-
-    override public string GetRBNstring()
+    public class RBNTitleAndAuthor : RBNLine
     {
-        return Title + ":" + Author;
-    }
+        public string Author;
+        public string Title;
 
-    override public void ParseRBNstring(string rbn)
-    {
-        if (!string.IsNullOrEmpty(rbn))
+        override public string GetRBNstring()
         {
-            string[] strings = rbn.Split(':');
-            Title = strings[0];
-            if (strings.Length > 1)
+            return Title + ":" + Author;
+        }
+
+        override public void ParseRBNstring(string rbn)
+        {
+            if (!string.IsNullOrEmpty(rbn))
             {
-                Author = strings[1];
-            }
-            else
-            {
-                Author = null;
+                string[] strings = rbn.Split(':');
+                Title = strings[0];
+                if (strings.Length > 1)
+                {
+                    Author = strings[1];
+                }
+                else
+                {
+                    Author = null;
+                }
             }
         }
-    }
 
-    override public RBNLineType GetRBNLineType()
-    {
-        return RBNLineType.TitleAndAuthor;
-    }
+        override public RBNLineType GetRBNLineType()
+        {
+            return RBNLineType.TitleAndAuthor;
+        }
 
+    }
 }
