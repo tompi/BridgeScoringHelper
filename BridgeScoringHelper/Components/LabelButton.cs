@@ -48,7 +48,9 @@ namespace BridgeScoringHelper.Components
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black
+                TextColor = Color.Black,
+                FontSize = 22,
+                FontAttributes = FontAttributes.Bold
             };
             _innerFrame = new Frame
             {
@@ -56,11 +58,11 @@ namespace BridgeScoringHelper.Components
                 Content = _label,
                 Padding = 0,
                 Margin=5,
-                CornerRadius = 5
+                CornerRadius = 3
             };
             Content = _innerFrame;
             CornerRadius = 5;
-            Padding = 0;
+            Padding = 10;
             Margin = 0;
         }
     }

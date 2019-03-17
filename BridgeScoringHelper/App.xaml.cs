@@ -11,7 +11,7 @@ namespace BridgeScoringHelper
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Calculator();
         }
 
         protected override void OnStart()

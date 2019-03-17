@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using Scoring.Game;
+using Scoring.Score;
 using Xamarin.Forms;
 
 namespace BridgeScoringHelper.Components
 {
     public partial class ContractEntry : ContentView
     {
+        public event EventHandler ContractChanged;
+
         private Dictionary<Scoring.Game.Suit, LabelButton> _suitButtons;
         private Dictionary<int, LabelButton> _levelButtons;
 
@@ -29,6 +32,15 @@ namespace BridgeScoringHelper.Components
             {
                 ToggleLevel(value.Level);
                 ToggleSuit(value.Suit);
+            }
+        }
+
+        public Vulnerability Vulnerability
+        {
+            get => vulnerabilityButton.Selected ? Vulnerability.Both : Vulnerability.None;
+            set
+            {
+                vulnerabilityButton.Selected = value.IsVulnerable(Direction.South);
             }
         }
 
@@ -59,7 +71,11 @@ namespace BridgeScoringHelper.Components
                 {Scoring.Game.Suit.Spades, spadeButton},
                 {Scoring.Game.Suit.Notrump, noTrumpButton}
             };
-            foreach (var kvp in _suitButtons) kvp.Value.Clicked += (sender, e) => ToggleSuit(kvp.Key);
+            foreach (var kvp in _suitButtons) kvp.Value.Clicked += (sender, e) =>
+            {
+                ToggleSuit(kvp.Key);
+                ContractChanged?.Invoke(sender, e);
+            };
 
             _levelButtons = new Dictionary<int, LabelButton>
             {
@@ -72,14 +88,22 @@ namespace BridgeScoringHelper.Components
                 {6, level6Button},
                 {7, level7Button},
             };
-            foreach (var kvp in _levelButtons) kvp.Value.Clicked += (sender, e) => ToggleLevel(kvp.Key);
+            foreach (var kvp in _levelButtons) kvp.Value.Clicked += (sender, e) =>
+            {
+                ToggleLevel(kvp.Key);
+                ContractChanged?.Invoke(sender, e);
+            };
 
             passButton.BackgroundColor = BridgeScoringHelper.Style.Colors.Bidding.Pass;
             passButton.TextColor = Color.White;
 
             vulnerabilityButton.BackgroundColor = BridgeScoringHelper.Style.Colors.Bidding.Pass;
             vulnerabilityButton.TextColor = Color.White;
-            vulnerabilityButton.Clicked += ToggleButtonClicked;
+            vulnerabilityButton.Clicked += (sender, e) =>
+            {
+                ToggleButtonClicked(vulnerabilityButton, e);
+                ContractChanged?.Invoke(sender, e);
+            };
 
             doubledButton.BackgroundColor = BridgeScoringHelper.Style.Colors.Bidding.Doubled;
             doubledButton.TextColor = Color.White;
@@ -91,6 +115,7 @@ namespace BridgeScoringHelper.Components
                     // If not doubled, it cant be redoubled
                     redoubledButton.Selected = false;
                 }
+                ContractChanged?.Invoke(sender, e);
             };
 
             redoubledButton.BackgroundColor = BridgeScoringHelper.Style.Colors.Bidding.ReDoubled;
@@ -103,6 +128,7 @@ namespace BridgeScoringHelper.Components
                     // If redoubled, it has to be doubled...
                     doubledButton.Selected = true;
                 }
+                ContractChanged?.Invoke(sender, e);
             };
         }
 
