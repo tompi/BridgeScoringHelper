@@ -21,7 +21,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             
-            <components:LabelButton Text="1" x:Name="level1Button" Grid.Row="0" Grid.Column="0"/>
+            <components:LabelButton Text="1" x:Name="level1Button" Grid.Row="0" Grid.Column="0" BorderColor="Teal"/>
             <components:LabelButton Text="2" x:Name="level2Button" Grid.Row="0" Grid.Column="1"/>
             <components:LabelButton Text="3" x:Name="level3Button" Grid.Row="0" Grid.Column="2"/>
             <components:LabelButton Text="4" x:Name="level4Button" Grid.Row="0" Grid.Column="3"/>
@@ -29,9 +29,7 @@
             <components:LabelButton Text="5" x:Name="level5Button" Grid.Row="1" Grid.Column="0"/>
             <components:LabelButton Text="6" x:Name="level6Button" Grid.Row="1" Grid.Column="1"/>
             <components:LabelButton Text="7" x:Name="level7Button" Grid.Row="1" Grid.Column="2"/>
-            <components:LabelButton Text="Pass" x:Name="passButton" Grid.Row="1" Grid.Column="3"
-                                    TextColor="White"
-                                    BackgroundColor="{x:Static style:Colors+Bidding.Pass}"/>
+            <components:LabelButton Text="Pass" x:Name="passButton" Grid.Row="1" Grid.Column="3"/>
 
             <suit:ClubButton x:Name="clubButton" Grid.Row="2" Grid.Column="0"/>
             <suit:DiamondButton x:Name="diamondButton" Grid.Row="2" Grid.Column="1"/>
@@ -39,15 +37,9 @@
             <suit:SpadeButton x:Name="spadeButton" Grid.Row="2" Grid.Column="3"/>
 
             <components:LabelButton Text="NT" x:Name="noTrumpButton" Grid.Row="3" Grid.Column="0"/>
-            <components:LabelButton Text="X" x:Name="doubledButton" Grid.Row="3" Grid.Column="1"
-                                    TextColor="White"
-                                    BackgroundColor="{x:Static style:Colors+Bidding.Doubled}"/>
-            <components:LabelButton Text="XX" x:Name="redoubledButton" Grid.Row="3" Grid.Column="2"
-                                    TextColor="White"
-                                    BackgroundColor="{x:Static style:Colors+Bidding.ReDoubled}"/>
-            <components:LabelButton Text="Vuln" x:Name="vulnerabilityButton" Grid.Row="3" Grid.Column="3"
-                                    TextColor="White"
-                                    BackgroundColor="{x:Static style:Colors+Bidding.Pass}"/>
+            <components:LabelButton Text="X" x:Name="doubledButton" Grid.Row="3" Grid.Column="1"/>
+            <components:LabelButton Text="XX" x:Name="redoubledButton" Grid.Row="3" Grid.Column="2"/>
+            <components:LabelButton Text="Vuln" x:Name="vulnerabilityButton" Grid.Row="3" Grid.Column="3"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

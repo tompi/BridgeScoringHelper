@@ -1,20 +1,14 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using BridgeScoringHelper.Style;
 
 namespace BridgeScoringHelper.Components.Suit
 {
-    public class DiamondButton : ButtonLayout
+    public class DiamondButton : LabelButton
     {
         public DiamondButton()
         {
-            Content = new Diamond
-            {
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalTextAlignment = TextAlignment.Center
-            };
-            BackgroundColor = BridgeScoringHelper.Style.Colors.Suits.DiamondBackground;
-
+            _label.Text = Constants.Suit.DiamondUnicodeCharacter.ToString();
+            _label.TextColor = Colors.Suits.Diamond;
+            BackgroundColor = Colors.Suits.DiamondBackground;
         }
     }
 }

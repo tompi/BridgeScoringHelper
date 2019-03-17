@@ -1,19 +1,14 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using BridgeScoringHelper.Style;
 
 namespace BridgeScoringHelper.Components.Suit
 {
-    public class ClubButton : ButtonLayout
+    public class ClubButton : LabelButton
     {
         public ClubButton()
         {
-            Content = new Club
-            {
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalTextAlignment = TextAlignment.Center
-            };
-            BackgroundColor = BridgeScoringHelper.Style.Colors.Suits.ClubBackground;
+            _label.Text = Constants.Suit.ClubUnicodeCharacter.ToString();
+            _label.TextColor = Colors.Suits.Club;
+            BackgroundColor = Colors.Suits.ClubBackground;
 
         }
     }

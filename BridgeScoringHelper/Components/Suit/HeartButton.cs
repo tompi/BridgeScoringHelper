@@ -1,20 +1,14 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using BridgeScoringHelper.Style;
 
 namespace BridgeScoringHelper.Components.Suit
 {
-    public class HeartButton : ButtonLayout
+    public class HeartButton : LabelButton
     {
         public HeartButton()
         {
-            Content = new Heart
-            {
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalTextAlignment = TextAlignment.Center
-            };
-            BackgroundColor = BridgeScoringHelper.Style.Colors.Suits.HeartBackground;
-
+            _label.Text = Constants.Suit.HeartUnicodeCharacter.ToString();
+            _label.TextColor = Colors.Suits.Heart;
+            BackgroundColor = Colors.Suits.HeartBackground;
         }
     }
 }

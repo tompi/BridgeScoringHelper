@@ -17,4 +17,7 @@
     <Folder Include="Components\Suit\" />
     <Folder Include="Style\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Scoring\Scoring.csproj" />
+  </ItemGroup>
 </Project>
