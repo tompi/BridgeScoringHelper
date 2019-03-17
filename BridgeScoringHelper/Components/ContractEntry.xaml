@@ -3,14 +3,51 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:suit="clr-namespace:BridgeScoringHelper.Components.Suit"
+    xmlns:style="clr-namespace:BridgeScoringHelper.Style"
+    xmlns:components="clr-namespace:BridgeScoringHelper.Components"
     x:Class="BridgeScoringHelper.Components.ContractEntry">
     <ContentView.Content>
-        <StackLayout Orientation="Horizontal">
-            <suit:Spade/>
-            <Label Text="&#x2660;" TextColor="#071087" FontSize="28"/>
-            <Label Text="&#x2665;" TextColor="#d72b21" FontSize="28"/>
-            <Label Text="&#x2666;" TextColor="#ef6c1a" FontSize="28"/>
-            <Label Text="&#x2663;" TextColor="#28552a" FontSize="28"/>
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <components:LabelButton Text="1" x:Name="level1Button" Grid.Row="0" Grid.Column="0"/>
+            <components:LabelButton Text="2" x:Name="level2Button" Grid.Row="0" Grid.Column="1"/>
+            <components:LabelButton Text="3" x:Name="level3Button" Grid.Row="0" Grid.Column="2"/>
+            <components:LabelButton Text="4" x:Name="level4Button" Grid.Row="0" Grid.Column="3"/>
+
+            <components:LabelButton Text="5" x:Name="level5Button" Grid.Row="1" Grid.Column="0"/>
+            <components:LabelButton Text="6" x:Name="level6Button" Grid.Row="1" Grid.Column="1"/>
+            <components:LabelButton Text="7" x:Name="level7Button" Grid.Row="1" Grid.Column="2"/>
+            <components:LabelButton Text="Pass" x:Name="passButton" Grid.Row="1" Grid.Column="3"
+                                    TextColor="White"
+                                    BackgroundColor="{x:Static style:Colors+Bidding.Pass}"/>
+
+            <suit:ClubButton x:Name="clubButton" Grid.Row="2" Grid.Column="0"/>
+            <suit:DiamondButton x:Name="diamondButton" Grid.Row="2" Grid.Column="1"/>
+            <suit:HeartButton x:Name="heartButton" Grid.Row="2" Grid.Column="2"/>
+            <suit:SpadeButton x:Name="spadeButton" Grid.Row="2" Grid.Column="3"/>
+
+            <components:LabelButton Text="NT" x:Name="noTrumpButton" Grid.Row="3" Grid.Column="0"/>
+            <components:LabelButton Text="X" x:Name="doubledButton" Grid.Row="3" Grid.Column="1"
+                                    TextColor="White"
+                                    BackgroundColor="{x:Static style:Colors+Bidding.Doubled}"/>
+            <components:LabelButton Text="XX" x:Name="redoubledButton" Grid.Row="3" Grid.Column="2"
+                                    TextColor="White"
+                                    BackgroundColor="{x:Static style:Colors+Bidding.ReDoubled}"/>
+            <components:LabelButton Text="Vuln" x:Name="vulnerabilityButton" Grid.Row="3" Grid.Column="3"
+                                    TextColor="White"
+                                    BackgroundColor="{x:Static style:Colors+Bidding.Pass}"/>
+        </Grid>
     </ContentView.Content>
 </ContentView>

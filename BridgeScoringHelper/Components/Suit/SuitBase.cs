@@ -7,7 +7,7 @@ namespace BridgeScoringHelper.Components.Suit
     {
         public SuitBase()
         {
-            FontSize = 16;
+            FontSize = 18;
         }
     }
 }

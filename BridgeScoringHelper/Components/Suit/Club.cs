@@ -7,7 +7,7 @@ namespace BridgeScoringHelper.Components.Suit
     {
         public Club()
         {
-            Text = "&#x2663;";
+            Text = Constants.Suit.ClubUnicodeCharacter.ToString();
             TextColor = Colors.Suits.Club;
         }
     }
