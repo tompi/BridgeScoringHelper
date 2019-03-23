@@ -10,12 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.14.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.14.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="Components\Suit\" />
     <Folder Include="Style\" />
+    <Folder Include="Db\" />
+    <Folder Include="Calculator\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Scoring\Scoring.csproj" />

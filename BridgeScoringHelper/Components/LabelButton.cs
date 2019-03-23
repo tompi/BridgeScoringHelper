@@ -56,13 +56,13 @@ namespace BridgeScoringHelper.Components
             {
                 HasShadow = false,
                 Content = _label,
-                Padding = 0,
+                Padding = new Thickness(0, 13),
                 Margin=5,
                 CornerRadius = 3
             };
             Content = _innerFrame;
             CornerRadius = 5;
-            Padding = 10;
+            Padding = 2;
             Margin = 0;
         }
     }
