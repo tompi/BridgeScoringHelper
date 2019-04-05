@@ -1,0 +1,5 @@
+
+screenheight:
+    oreo emulator(27): 378
+    iphone xr(emulator): 896
+
