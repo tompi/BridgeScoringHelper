@@ -97,7 +97,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -160,6 +159,8 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120-2.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-180-1.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -182,5 +183,14 @@
       <Project>{63D9114E-5A38-4A85-BA86-DF00CC574364}</Project>
       <Name>BridgeScoringHelper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="Assets.xcassets\iTunesArtwork%402x.png">
+      <Link>Resources\iTunesArtwork%402x.png</Link>
+    </ITunesArtwork>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iTunesArtwork%403x.png" />
+    <BundleResource Include="Resources\ClubTransparent.png" />
   </ItemGroup>
 </Project>

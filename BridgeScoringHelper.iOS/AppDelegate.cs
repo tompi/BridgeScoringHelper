@@ -23,6 +23,11 @@ namespace BridgeScoringHelper.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            var screenHeight = (int)UIScreen.MainScreen.Bounds.Height;
+            var screenWidth = (int)UIScreen.MainScreen.Bounds.Width;
+            App.SizeManager = new SizeManager(screenHeight, screenWidth);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -29,6 +29,17 @@ namespace BridgeScoringHelper.Components
             }
         }
 
+        private LineBreakMode _lineBreakMode;
+        public LineBreakMode LineBreakMode
+        {
+            get => _lineBreakMode;
+            set
+            {
+                _lineBreakMode = value;
+                _label.LineBreakMode = _lineBreakMode;
+            }
+        }
+
         public new Color BackgroundColor
         {
             get => _innerFrame.BackgroundColor;
@@ -49,19 +60,19 @@ namespace BridgeScoringHelper.Components
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
-                FontSize = 22,
-                FontAttributes = FontAttributes.Bold
+                FontSize = App.SizeManager.FontSize,
+                FontAttributes = FontAttributes.Bold,
             };
             _innerFrame = new Frame
             {
                 HasShadow = false,
                 Content = _label,
-                Padding = new Thickness(0, 13),
+                Padding = new Thickness(0, App.SizeManager.ButtonVerticalPadding),
                 Margin=5,
-                CornerRadius = 3
+                CornerRadius = App.SizeManager.CornerRadius * 3f / 5f
             };
             Content = _innerFrame;
-            CornerRadius = 5;
+            CornerRadius = App.SizeManager.CornerRadius;
             Padding = 2;
             Margin = 0;
         }

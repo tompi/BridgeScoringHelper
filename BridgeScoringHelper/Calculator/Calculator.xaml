@@ -5,19 +5,37 @@
     xmlns:components="clr-namespace:BridgeScoringHelper.Components" 
     BackgroundColor="Black"
     x:Class="BridgeScoringHelper.Calculator.Calculator">
-    <StackLayout Padding="20">
+    <StackLayout>
+        <StackLayout.Padding>
+            <OnIdiom x:TypeArguments="Thickness">
+                <OnIdiom.Phone>5</OnIdiom.Phone>
+                <OnIdiom.Tablet>20</OnIdiom.Tablet>
+            </OnIdiom>
+        </StackLayout.Padding>
         
         <Label x:Name="result" HorizontalOptions="Center"
-               TextColor="White" FontSize="35" FontAttributes="Bold"
+               TextColor="White" FontAttributes="Bold"
                HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center"
-               Margin="0,30"/>
+               VerticalTextAlignment="Center">
+            <Label.Margin>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>0,5</OnIdiom.Phone>
+                    <OnIdiom.Tablet>0,30</OnIdiom.Tablet>
+                </OnIdiom>
+            </Label.Margin>
+        </Label>
         
         <components:ContractEntry x:Name="contractEntry"/>
 
-        <Label TextColor="White" Text="Tricks:"
-               Margin="0,40,0,0" FontSize="Large" 
-               HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label TextColor="White" Text="Tricks:" x:Name="tricksHeaderLabel"
+               HorizontalOptions="Center" VerticalOptions="Center">
+            <Label.Margin>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>0,5,0,0</OnIdiom.Phone>
+                    <OnIdiom.Tablet>0,30,0,0</OnIdiom.Tablet>
+                </OnIdiom>
+            </Label.Margin>
+        </Label>
         
         <Grid>
             <Grid.ColumnDefinitions>
@@ -32,7 +50,7 @@
             <components:LabelButton x:Name="minusButton" Text="-"/>
             <Label TextColor="White" x:Name="tricksLabel" Text="10"
                    Grid.Column="1" Grid.ColumnSpan="2"
-                   FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+                   HorizontalOptions="Center" VerticalOptions="Center"/>
             <components:LabelButton x:Name="plusButton" Text="+" Grid.Column="3"/>
         </Grid>
 

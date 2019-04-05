@@ -10,8 +10,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -28,8 +26,6 @@
 	<string>no.appman.bridgescoringhelper</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>BridgeScoringHelper</string>
 	<key>XSAppIconAssets</key>
@@ -38,5 +34,7 @@
 	<string>1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>

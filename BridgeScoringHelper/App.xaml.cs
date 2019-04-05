@@ -5,15 +5,21 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 
-
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace BridgeScoringHelper
 {
     public partial class App : Application
     {
+        public static SizeManager SizeManager { get; set; }
+
         public App()
         {
             InitializeComponent();
+
+            if (DesignMode.IsDesignModeEnabled)
+            {
+                SizeManager = new SizeManager(896, 420);
+            }
 
             MainPage = new Calculator.Calculator();
         }

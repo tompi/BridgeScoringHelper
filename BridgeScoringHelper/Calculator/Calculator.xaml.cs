@@ -13,9 +13,12 @@ namespace BridgeScoringHelper.Calculator
         {
             InitializeComponent();
 
+            result.FontSize = App.SizeManager.FontSize * 1.5d;
+            tricksLabel.FontSize = App.SizeManager.FontSize;
+            tricksHeaderLabel.FontSize = App.SizeManager.FontSize;
+
             // Initialize contract to 2S=
             contractEntry.Contract = new Contract(2, Suit.Spades, false, false, Direction.South, _tricks);
-            ContractEntry_ContractChanged(this, null);
             _tricks = contractEntry.Contract.Level + 6;
             tricksLabel.Text = _tricks.ToString();
 
@@ -23,6 +26,9 @@ namespace BridgeScoringHelper.Calculator
             minusButton.Clicked += MinusButton_Clicked;
             plusButton.Clicked += PlusButton_Clicked;
             contractEntry.ContractChanged += ContractEntry_ContractChanged;
+
+            // Show initial contract
+            ContractEntry_ContractChanged(this, null);
         }
 
         void MinusButton_Clicked(object sender, EventArgs e)
